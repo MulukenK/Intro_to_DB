@@ -15,7 +15,7 @@ def list_tables():
         
         cursor = conn.cursor()
 
-   
+        cursor.execute("USE alx_book_store")
         cursor.execute("SHOW TABLES")
   
         tables = cursor.fetchall()

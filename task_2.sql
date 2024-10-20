@@ -15,14 +15,14 @@ def create_tables():
 
         
         create_authors_table = """
-        CREATE TABLE IF NOT EXISTS authors (
+        CREATE TABLE IF NOT EXISTS Authors (
             author_id INT AUTO_INCREMENT PRIMARY KEY,
             author_name VARCHAR(215) NOT NULL
         )
         """
 
         create_books_table = """
-        CREATE TABLE IF NOT EXISTS books (
+        CREATE TABLE IF NOT EXISTS Books (
             book_id INT AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(130) NOT NULL,
             author_id INT,
@@ -33,7 +33,7 @@ def create_tables():
         """
 
         create_customers_table = """
-        CREATE TABLE IF NOT EXISTS customers (
+        CREATE TABLE IF NOT EXISTS Customers (
             customer_id INT AUTO_INCREMENT PRIMARY KEY,
             customer_name VARCHAR(215) NOT NULL,
             email VARCHAR(215) NOT NULL UNIQUE,
@@ -42,7 +42,7 @@ def create_tables():
         """
 
         create_orders_table = """
-        CREATE TABLE IF NOT EXISTS orders (
+        CREATE TABLE IF NOT EXISTS Orders (
             order_id INT AUTO_INCREMENT PRIMARY KEY,
             customer_id INT,
             order_date DATE,
@@ -51,7 +51,7 @@ def create_tables():
         """
 
         create_order_details_table = """
-        CREATE TABLE IF NOT EXISTS order_details (
+        CREATE TABLE IF NOT EXISTS Order_Details (
             orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
             order_id INT,
             book_id INT,

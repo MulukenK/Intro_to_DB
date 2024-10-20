@@ -11,15 +11,15 @@ def list_tables():
             database='alx_book_store'
         )
         
+      
+        
         cursor = conn.cursor()
 
-        # Execute a query to retrieve table names
-        cursor.execute("SELECT * FROM information_schema.tables WHERE table_schema = 'alx_book_store'")
-        
-        # Fetch all results
+   
+        cursor.execute("SHOW TABLES")
+  
         tables = cursor.fetchall()
 
-        # Print the table names
         print("Tables in 'alx_book_store':")
         for table in tables:
             print(table[0])
@@ -34,7 +34,7 @@ def list_tables():
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
-        # Closing the cursor and connection
+        
         if cursor:
             cursor.close()
         if conn:

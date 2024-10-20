@@ -3,7 +3,7 @@ from mysql.connector import errorcode
 
 def list_tables():
     try:
-        # Establishing the connection
+        
         conn = mysql.connector.connect(
             host='localhost',  
             user='root',  
@@ -14,7 +14,7 @@ def list_tables():
         cursor = conn.cursor()
 
         # Execute a query to retrieve table names
-        cursor.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = 'alx_book_store'")
+        cursor.execute("SELECT * FROM information_schema.tables WHERE table_schema = 'alx_book_store'")
         
         # Fetch all results
         tables = cursor.fetchall()

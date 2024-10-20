@@ -3,17 +3,17 @@ from mysql.connector import errorcode
 
 def create_tables():
     try:
-        # Establishing the connection
+       
         conn = mysql.connector.connect(
-            host='localhost',  # Change this if your MySQL server is on a different host
-            user='your_username',  # Replace with your MySQL username
-            password='your_password',  # Replace with your MySQL password
+            host='localhost',  
+            user='root', 
+            password='937224@chachi', 
             database='alx_book_store'
         )
         
         cursor = conn.cursor()
 
-        # Create tables
+        
         create_authors_table = """
         CREATE TABLE IF NOT EXISTS authors (
             author_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,7 +61,7 @@ def create_tables():
         )
         """
 
-        # Execute the table creation statements
+       
         cursor.execute(create_authors_table)
         cursor.execute(create_books_table)
         cursor.execute(create_customers_table)
@@ -80,7 +80,7 @@ def create_tables():
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
-        # Closing the cursor and connection
+      
         if cursor:
             cursor.close()
         if conn:

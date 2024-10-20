@@ -3,7 +3,7 @@ from mysql.connector import errorcode
 
 def get_books_table_description(database_name):
     try:
-        # Establishing the connection
+       
         conn = mysql.connector.connect(
             host='localhost',  
             user='root',  
@@ -13,7 +13,7 @@ def get_books_table_description(database_name):
         
         cursor = conn.cursor()
 
-        # Query to get the table description
+        
         query = """
         SELECT 
             COLUMN_NAME, 
@@ -31,7 +31,7 @@ def get_books_table_description(database_name):
         cursor.execute(query, (database_name,))
         results = cursor.fetchall()
 
-        # Print the results
+        
         print(f"Description of the 'books' table in '{database_name}':")
         print(f"{'COLUMN NAME':<30} {'DATA TYPE':<20} {'MAX LENGTH':<15} {'IS NULLABLE':<15} {'DEFAULT':<15}")
         print("-" * 100)
@@ -48,7 +48,7 @@ def get_books_table_description(database_name):
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
-        # Closing the cursor and connection
+        
         if cursor:
             cursor.close()
         if conn:

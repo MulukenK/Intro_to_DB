@@ -25,7 +25,7 @@ SELECT
 FROM 
     INFORMATION_SCHEMA.COLUMNS 
 WHERE 
-    TABLE_SCHEMA = %s 
+    TABLE_SCHEMA = 'alx_book_store' 
     AND TABLE_NAME = 'Books';
 """
 
